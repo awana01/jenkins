@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="NgMaven.NgMaven01.NgMavenTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
