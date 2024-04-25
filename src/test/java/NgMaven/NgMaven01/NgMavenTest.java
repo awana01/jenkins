@@ -25,7 +25,7 @@ public class NgMavenTest
     @BeforeTest()
     public void before()
     {
-    	System.setProperty("chrome.webdriver.driver","E:/Selenium-3.6/chrome-78/chromedriver.exe");
+    	//System.setProperty("chrome.webdriver.driver","E:/Selenium-3.6/chrome-78/chromedriver.exe");
     	ChromeOptions options = new ChromeOptions();
     	options.addArguments("--test-type");
     	
