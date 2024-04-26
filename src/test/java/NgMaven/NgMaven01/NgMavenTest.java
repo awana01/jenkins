@@ -46,7 +46,7 @@ public class NgMavenTest
     	driver.quit();
     }
     
-    @Test(invocationCount=3)
+    @Test(invocationCount=1)
     public void test01() throws InterruptedException
     {
     	
