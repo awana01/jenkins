@@ -19,6 +19,9 @@ public class NewTest {
 	@Test
 	public void f() {
 		System.out.println("Executing test...");
+		System.out.println("Executing test...");
+		System.out.println("Executing test...");
+		System.out.println("Executing test...");
 	}
 
 }
