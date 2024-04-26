@@ -1,8 +1,11 @@
 package NgMaven.NgMaven01;
 
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,12 +33,7 @@ public class NgMavenTest
     	options.addArguments("--test-type");
     	options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless");
-        
-
-    	options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
 
     	driver = new ChromeDriver(options);
     	driver.get("https://www.google.com/");
@@ -48,18 +46,28 @@ public class NgMavenTest
     	driver.quit();
     }
     
-    @Test()
+    @Test(invocationCount=3)
     public void test01() throws InterruptedException
     {
-    	System.out.println("Main Test1 executing");
     	
-    	System.out.println("After Test Executiing");
+    	List<String> givenList = Arrays.asList("Selenium Jenkins pipeline","selenium java azure pipeline","cucumber jenkins pipeline","selenium git allure result");
+        Random rand = new Random();
+        String randomElement = givenList.get(rand.nextInt(givenList.size()));
+    	
+    	
+    	System.out.println("Test1 executing");
+    	
     	WebElement searchbox = driver.findElement(By.name("q"));
-    	searchbox.sendKeys("maven project in jenkins\n");
+    	
+    	searchbox.clear();
+    	searchbox.sendKeys(randomElement+"\n");
     	Thread.sleep(2500);
     	    	
     	Actions action = new Actions(driver);
-//    	action.keyDown(Keys.ESCAPE).keyUp(Keys.ESCAPE).build().perform();
+    //	action.keyDown(Keys.ESCAPE).keyUp(Keys.ESCAPE).build().perform();
+    	
+    	String result_stat = driver.findElement(By.cssSelector("div#result-stats")).getText();
+    	System.out.println(String.format("Google Search for: '%s' Result found: %s",randomElement,result_stat));
     	
     	System.out.println("Execution done...");
     	
