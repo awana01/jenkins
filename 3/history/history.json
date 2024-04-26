@@ -1,1 +1,0 @@
-{"42f5780aafe55942972e48c4901bc19f":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"740493b82c4321c6","reportUrl":"https://awana01.github.io/jenkins/3//#testresult/740493b82c4321c6","status":"passed","time":{"start":1714119376085,"stop":1714119379372,"duration":3287}}]}}
