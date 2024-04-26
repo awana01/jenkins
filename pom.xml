@@ -18,6 +18,9 @@
 		<java.version>17</java.version>
 		<selenium.version>4.20.0</selenium.version>
 		<ng.version>7.10.1</ng.version>
+		<allure.version>2.27.0</allure.version>
+		<aspectj.version>1.9.22</aspectj.version>
+		<runMode>platform</runMode>
 	</properties>
 
 	<dependencies>
@@ -35,6 +38,13 @@
 			<artifactId>testng</artifactId>
 			<version>${ng.version}</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>${allure.version}</version>
 		</dependency>
 
 
@@ -59,7 +69,20 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
+				    <argLine>
+						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+					</argLine>
+					<systemPropertyVariables>
+						<allure.results.directory>target/allure-results</allure.results.directory>
+					</systemPropertyVariables>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjweaver</artifactId>
+						<version>${aspectj.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 		</plugins>
 	</build>
