@@ -15,8 +15,8 @@ jobs:
           distribution: zulu
           java-version: 17
           
-      - uses: browser-actions/setup-chrome@latest
-         run: chrome --version
+        uses: browser-actions/setup-chrome@latest
+        run: chrome --version
       
       
       - name: Run tests
