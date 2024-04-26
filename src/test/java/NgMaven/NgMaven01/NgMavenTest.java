@@ -33,7 +33,7 @@ public class NgMavenTest
     	options.addArguments("--test-type");
     	options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--headless");
+        options.addArguments("--headless");
 
     	driver = new ChromeDriver(options);
     	driver.get("https://www.google.com/");
