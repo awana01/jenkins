@@ -60,7 +60,7 @@ public class NgMavenTest
     	
     	Thread.sleep(2500);
     	driver.findElement(By.name("btnK")).click();	
-    	
+    	System.out.println("Execution done...");
     	
     	
     	
