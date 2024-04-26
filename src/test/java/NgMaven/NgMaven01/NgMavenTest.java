@@ -26,11 +26,18 @@ public class NgMavenTest
     public void before()
     {
       	ChromeOptions options = new ChromeOptions();
+<<<<<<< HEAD
     	options.addArguments("--test-type");
     	options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--headless");
         
+=======
+    	options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--headless");
+    	
+>>>>>>> 0b8a4e8b1275647179a85dfa7c6b922fab215ea9
     	driver = new ChromeDriver(options);
     	driver.get("https://www.google.com/");
         System.out.println("BeforeTest Executing");

@@ -16,7 +16,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -27,7 +26,11 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+<<<<<<< HEAD
    
+=======
+        
+>>>>>>> 0b8a4e8b1275647179a85dfa7c6b922fab215ea9
     - uses: browser-actions/setup-chrome@latest
     - run: chrome --version
     
