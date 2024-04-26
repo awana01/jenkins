@@ -26,7 +26,7 @@ jobs:
       run: mvn -B clean install
      
     - name: Get Allure history
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       if: always()
       continue-on-error: true
       with:
@@ -39,14 +39,15 @@ jobs:
       if: always()
       #~ id: allure-report
       with:
-          allure_results: allure-results
+          allure_results: allure-results  # Specify the directory containing Allure results
           gh_pages: gh-pages
           #~ allure_report: allure-report
-          allure_history: allure-history
+          allure_history: allure-history  # Specify the directory to store Allure history
+          keep_reports: 5
      
     - name: Deploy report to Github Pages
       if: always()
-      uses: peaceiris/actions-gh-pages@v2
+      uses: peaceiris/actions-gh-pages@v3
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: gh-pages

@@ -1,4 +1,4 @@
-package NgMaven.NgMaven01;
+package example.tests;
 
 
 import java.util.Arrays;

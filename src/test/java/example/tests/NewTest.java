@@ -1,4 +1,4 @@
-package NgMaven.NgMaven01;
+package example.tests;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeTest;
