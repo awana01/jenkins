@@ -25,22 +25,18 @@ public class NgMavenTest
     @BeforeTest()
     public void before()
     {
-    	//System.setProperty("chrome.webdriver.driver","E:/Selenium-3.6/chrome-78/chromedriver.exe");
-    	ChromeOptions options = new ChromeOptions();
+      	ChromeOptions options = new ChromeOptions();
     	options.addArguments("--test-type");
     	
     	driver = new ChromeDriver(options);
     	driver.get("https://www.google.com/");
-    	
-    	
         System.out.println("BeforeTest Executing");
     }
     
     
     @AfterTest()
-    public void after() throws InterruptedException
-    {
-    	//driver.close();
+    public void after() {
+    	driver.quit();
     }
     
     @Test()
@@ -50,16 +46,12 @@ public class NgMavenTest
     	
     	System.out.println("After Test Executiing");
     	WebElement searchbox = driver.findElement(By.name("q"));
-    	searchbox.sendKeys("maven project in jenkins");
-    	searchbox.sendKeys(Keys.ESCAPE);
+    	searchbox.sendKeys("maven project in jenkins\n");
     	Thread.sleep(2500);
-    	driver.findElement(By.cssSelector("img#hplogo")).click();
-    	
+    	    	
     	Actions action = new Actions(driver);
 //    	action.keyDown(Keys.ESCAPE).keyUp(Keys.ESCAPE).build().perform();
     	
-    	Thread.sleep(2500);
-    	driver.findElement(By.name("btnK")).click();	
     	System.out.println("Execution done...");
     	
     	
