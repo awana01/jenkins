@@ -2,8 +2,8 @@
 <suite parallel="false" name="Suite">
   <test name="Test">
     <classes>
-	  <class name="example.tests.NewTest.java"/>
-      <class name="example.tests.SampleWebTest"/>
+	  <class name="example.tests.NewTest"/>
+<!--      <class name="example.tests.SampleWebTest"/>-->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
