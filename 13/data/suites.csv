@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu May 23 14:25:53 GMT 2024","Thu May 23 14:25:57 GMT 2024","3274","Suite","Test","example.tests.SampleWebTest","example.tests.SampleWebTest","test01","test01",""
+"passed","Thu May 23 14:25:53 GMT 2024","Thu May 23 14:25:53 GMT 2024","4","Suite","Test","example.tests.NewTest","example.tests.NewTest","f","f",""
