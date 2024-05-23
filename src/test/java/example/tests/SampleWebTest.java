@@ -15,9 +15,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-/**
- * Unit test for simple App.
- */
+
 public class SampleWebTest 
 {
   WebDriver driver;
@@ -61,8 +59,10 @@ public class SampleWebTest
     	
     	searchbox.clear();
     	searchbox.sendKeys(randomElement+"\n");
-    	Thread.sleep(2500);
-    	    	
+    	Thread.sleep(1500);
+    	
+    	driver.findElement(By.id("hdtb-tls")).click();
+    	
     	Actions action = new Actions(driver);
     //	action.keyDown(Keys.ESCAPE).keyUp(Keys.ESCAPE).build().perform();
     	
