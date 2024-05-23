@@ -16,8 +16,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
-		<selenium.version>4.20.0</selenium.version>
-		<ng.version>7.10.1</ng.version>
+		<selenium.version>4.21.0</selenium.version>
+		<ng.version>7.10.2</ng.version>
 		<allure.version>2.27.0</allure.version>
 		<aspectj.version>1.9.22</aspectj.version>
 		<runMode>platform</runMode>
@@ -39,12 +39,26 @@
 			<version>${ng.version}</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
 		<dependency>
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-testng</artifactId>
 			<version>${allure.version}</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+		<!--<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.14.0</version>
+		</dependency>-->
+
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.16.1</version>
 		</dependency>
 
 
@@ -69,11 +83,11 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
-				    <argLine>
+					<argLine>
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 					<systemPropertyVariables>
-						<allure.results.directory>allure-results</allure.results.directory>
+						<allure.results.directory>target/allure-results</allure.results.directory>
 					</systemPropertyVariables>
 				</configuration>
 				<dependencies>
@@ -86,6 +100,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>

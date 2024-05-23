@@ -15,6 +15,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import example.testutil.AttachmentUtil;
+
 
 public class SampleWebTest 
 {
@@ -69,9 +71,18 @@ public class SampleWebTest
     	String result_stat = driver.findElement(By.cssSelector("div#result-stats")).getText();
     	System.out.println(String.format("Google Search for: '%s' Result found: %s",randomElement,result_stat));
     	
+    	new AttachmentUtil(driver).takeScreenshot();
     	System.out.println("Execution done...");
     	
+    	new AttachmentUtil(driver).takeBase64Screenshot();
     	
+    	new AttachmentUtil(driver).getScreenshotAsBase64();
+    	
+    	new AttachmentUtil(driver).attachText("eleeeeeeeeeeeeeeeeee meeeeeeeeeeee nttttttttttt");
+    	
+    	
+    	String jString = "{\"element\":\"ele1\",\"group\":\"Hydra\"}";
+    	new AttachmentUtil(driver).attachJsonText(jString);
     	
     }
     
