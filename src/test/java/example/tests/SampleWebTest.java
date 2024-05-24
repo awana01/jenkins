@@ -121,6 +121,7 @@ public class SampleWebTest
     
     @Test(description="Take WebElement screenshot2",priority=3)
     public void test03() throws InterruptedException {
+    	System.out.println("Trying to take Element is displayed");
     	By toolsMenuAll = By.cssSelector("div#hdtbMenus.pZvJc.qCqYBc");
     	new AttachmentUtil(driver).AddElementShot(toolsMenuAll);
     }
