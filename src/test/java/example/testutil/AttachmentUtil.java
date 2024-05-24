@@ -72,30 +72,30 @@ public class AttachmentUtil {
 		byte[] screenshot = ((TakesScreenshot) this.driver).getScreenshotAs(OutputType.BYTES);
 		return screenshot;
 	}
-	
-	
+
+
 	@Attachment(value = "Base64-WebElementScreenshot", type = "image/png")
 	public byte[] getWebElementScreenshotAsBase64(By by) {
-		
+
 		byte[] screenshot = ((TakesScreenshot) this.driver.findElement(by)).getScreenshotAs(OutputType.BYTES);
 		return screenshot;
 	}
-	
+
 	@Attachment(value = "Base64-WebElementScreenshot", type = "image/png")
 	public byte[] getWebElementScreenshotAsBase64(WebElement ele) {
-		
+
 		byte[] screenshot = ((TakesScreenshot) ele).getScreenshotAs(OutputType.BYTES);
 		return screenshot;
 	}
-	
-	
+
+
 	public void AddElementShot(By by) {
 		WebElement we =this.driver.findElement(by);
 		byte[] screenshot = ((TakesScreenshot) this.driver).getScreenshotAs(OutputType.BYTES);
 		Allure.addAttachment("EleScreenshotAsBase64", "image/png",screenshot.toString());
 	}
-	
-	
-	
+
+
+
 
 }
