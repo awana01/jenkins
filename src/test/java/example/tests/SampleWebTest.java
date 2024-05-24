@@ -1,11 +1,17 @@
 package example.tests;
 
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,6 +22,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import example.testutil.AttachmentUtil;
+import io.qameta.allure.Allure;
 
 
 public class SampleWebTest
@@ -120,10 +127,31 @@ public class SampleWebTest
     }
 
     @Test(description="Take WebElement screenshot2",priority=3)
-    public void test03() throws InterruptedException {
+    public void test03() throws InterruptedException, IOException {
     	System.out.println("Trying to take 1212Element is displayed");
     	By toolsMenuAll = By.cssSelector("div#hdtbMenus.pZvJc.qCqYBc");
     	//new AttachmentUtil(driver).AddElementShot(toolsMenuAll);
+    	
+    	
+    	byte[] data = driver.findElement(toolsMenuAll).getScreenshotAs(OutputType.BYTES);
+    	Allure.addAttachment("ELE1", "image/png", Base64.getEncoder().encodeToString(data));
+    	
+    	Allure.addAttachment("ELE2",Base64.getEncoder().encodeToString(data));
+    	
+    	
+    	Allure.addAttachment("ELE3", Base64.getEncoder().encodeToString(data),"image/png");
+    	
+    	File file = driver.findElement(toolsMenuAll).getScreenshotAs(OutputType.FILE);
+    	//Files.copy(file.toPath(), Path.of("start.png"));
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
     }
 
 }
