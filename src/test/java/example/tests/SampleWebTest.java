@@ -46,7 +46,7 @@ public class SampleWebTest
     	driver.quit();
     }
     
-    @Test(invocationCount=1)
+    @Test(invocationCount=1,priority=1)
     public void test01() throws InterruptedException
     {
     	
@@ -81,15 +81,48 @@ public class SampleWebTest
     	new AttachmentUtil(driver).attachText("eleeeeeeeeeeeeeeeeee meeeeeeeeeeee nttttttttttt");
     	
     	
-    	String jString = "{\"element\":\"ele1\",\"group\":\"Hydra\"}";
+    	String jString = "{\"element\":\"ele1\","
+    			+ "\"group\":\"Hydra\"}";
     	new AttachmentUtil(driver).attachJsonText(jString);
+    	String x = "{\r\n"
+    			+ "  \"ele1\":\"erty\",\r\n"
+    			+ "  \"ele2\":\"sdsddfdsf\"\r\n"
+    			+ "}";
     	
+    	new AttachmentUtil(driver).attachJsonText(x);
+    	// text/html
+    	// Media types: text/csv, 
+    	// text/tab-separated-values
     }
     
     
+    @Test(description="Take WebElement screenshot",priority=2)
+    public void test02() throws InterruptedException {
+    	WebElement toolsMenu  = driver.findElement(By.id("hdtbMenus"));
+    	
+    	By toolsMenuAll = By.cssSelector("div#hdtbMenus.pZvJc.qCqYBc");
+    	
+    	
+    	if(toolsMenu.isDisplayed()) {
+    		System.out.println("Element is displayed");
+    		new AttachmentUtil(driver).getWebElementScreenshotAsBase64(toolsMenu);
+    		
+    		
+    		
+    	}else {
+    		System.out.println("Element is not displayed");
+    		driver.findElement(By.id("hdtb-tls")).click();
+    		new AttachmentUtil(driver).getWebElementScreenshotAsBase64(By.id("hdtbMenus"));
+    		Thread.sleep(500);
+    		
+    		
+    	}
+    }
     
-    
-    
-    
+    @Test(description="Take WebElement screenshot2",priority=3)
+    public void test03() throws InterruptedException {
+    	By toolsMenuAll = By.cssSelector("div#hdtbMenus.pZvJc.qCqYBc");
+    	new AttachmentUtil(driver).AddElementShot(toolsMenuAll);
+    }
     
 }
